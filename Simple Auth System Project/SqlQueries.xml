@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddInformation>
+		<![CDATA[
+			INSERT INTO EmpDetails(Name,Age,EmailId,ContactNo,Salary)
+			VALUES(@Name,@Age,@EmailId,@ContactNo,@Salary);
+		]]>
+	</AddInformation>
+	<ReadAllInformation>
+		<![CDATA[
+			SELECT * FROM EmpDetails
+			WHERE IsActive=1;			
+		]]>
+	</ReadAllInformation>
+	<UpdateAllInformationById>
+		<![CDATA[
+			UPDATE EmpDetails
+			SET Name=@Name,
+				Age=@Age,
+				EmailId=@EmailId,
+				ContactNo=@ContactNo,
+				Salary=@Salary
+				WHERE EmpId=@EmpId;			
+		]]>
+	</UpdateAllInformationById>
+	<DeleteInformationById>
+		<![CDATA[
+			UPDATE EmpDetails
+			SET IsActive=0
+			WHERE EmpId=@EmpId;		
+		]]>
+	</DeleteInformationById>
+	
+	<GetDeleteAllInformation>
+		<![CDATA[
+			DELETE FROM EmpDetails
+			WHERE EmpId=@EmpId;
+		]]>
+	</GetDeleteAllInformation>
+		
+</Queries>
